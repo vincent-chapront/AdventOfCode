@@ -25,5 +25,27 @@ namespace AdventOfCode
 
             return input;
         }
+        public static U SafeGet<T,U>(this Dictionary<T,U> input,T key, U defaultValue)
+        {
+            if (!input.ContainsKey(key))
+            {
+                return defaultValue;
+            }
+            else
+            {
+                return input[key];
+            }
+        }
+        public static void SafeSet<T,U>(this Dictionary<T,U> input,T key,U value)
+        {
+            if (!input.ContainsKey(key))
+            {
+                input.Add(key,value);
+            }
+            else
+            {
+                input[key] = value;
+            }
+        }
     }
 }
