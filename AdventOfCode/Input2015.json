@@ -1,0 +1,573 @@
+{
+  "year": 2015,
+  "days": [
+    {
+      "day": 1,
+      "file": "Day01",
+      "part1": {
+        "tests": [
+          {
+            "text": "(())",
+            "result": "0"
+          },
+          {
+            "text": "()()",
+            "result": "0"
+          },
+          {
+            "text": "(((",
+            "result": "3"
+          },
+          {
+            "text": "(()(()(",
+            "result": "3"
+          },
+          {
+            "text": "))(((((",
+            "result": "3"
+          },
+          {
+            "text": "())",
+            "result": "-1"
+          },
+          {
+            "text": "))(",
+            "result": "-1"
+          },
+          {
+            "text": ")))",
+            "result": "-3"
+          },
+          {
+            "text": ")())())",
+            "result": "-3"
+          }
+        ],
+        "result": "232"
+      },
+      "part2": {
+        "tests": [
+          {
+            "text": ")",
+            "result": "1"
+          },
+          {
+            "text": "()())",
+            "result": "5"
+          }
+        ],
+        "result": "1783"
+      }
+    },
+    {
+      "day": 2,
+      "file": "Day02",
+      "part1": {
+        "tests": [
+          {
+            "text": "2x3x4",
+            "result": "58"
+          },
+          {
+            "text": "1x1x10",
+            "result": "43"
+          }
+        ],
+        "result": "1606483"
+      },
+      "part2": {
+        "tests": [
+          {
+            "text": "2x3x4",
+            "result": "34"
+          },
+          {
+            "text": "1x1x10",
+            "result": "14"
+          }
+        ],
+        "result": "3842356"
+      }
+    },
+    {
+      "day": 3,
+      "file": "Day03",
+      "part1": {
+        "tests": [
+          {
+            "text": ">",
+            "result": "2"
+          },
+          {
+            "text": "^>v<",
+            "result": "4"
+          },
+          {
+            "text": "^v^v^v^v^v",
+            "result": "2"
+          }
+        ],
+        "result": "2572"
+      },
+      "part2": {
+        "tests": [
+          {
+            "text": "^v",
+            "result": "3"
+          },
+          {
+            "text": ">v<",
+            "result": "3"
+          },
+          {
+            "text": "^v^v^v^v^v",
+            "result": "11"
+          }
+        ],
+        "result": "2631"
+      }
+    },
+    {
+      "day": 4,
+      "file": "Day04",
+      "part1": {
+        "tests": [
+          {
+            "text": "abcdef",
+            "result": "609043"
+          },
+          {
+            "text": "pqrstuv",
+            "result": "1048970"
+          }
+        ],
+        "result": "117946"
+      },
+      "part2": {
+        "result": "3938038"
+      }
+    },
+    {
+      "day": 5,
+      "file": "Day05",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day05Test1",
+            "result": "2"
+          }
+        ],
+        "result": "255"
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day05Test2",
+            "result": "2"
+          }
+        ],
+        "result": "55"
+      }
+    },
+    {
+      "day": 6,
+      "file": "Day06",
+      "part1": {
+        "tests": [
+          {
+            "text": "turn on 0,0 through 999,999",
+            "result": "1000000"
+          }
+        ],
+        "result": "569999"
+      },
+      "part2": {
+        "tests": [
+          {
+            "text": "turn on 0,0 through 0,0",
+            "result": "1"
+          },
+          {
+            "text": "turn off 0,0 through 0,0",
+            "result": "0"
+          },
+          {
+            "text": "toggle 0,0 through 999,999",
+            "result": "2000000"
+          }
+        ],
+        "result": "17836115"
+      }
+    },
+    {
+      "day": 7,
+      "file": "Day07",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day07Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day07Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 8,
+      "file": "Day08",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day08Test",
+            "result": "12"
+          }
+        ],
+        "result": "1350"
+      },
+      "part2": {
+        "result": "2085"
+      }
+    },
+    {
+      "day": 9,
+      "file": "Day09",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day09Test",
+            "result": "605"
+          }
+        ],
+        "result": "141"
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day09Test",
+            "result": "982"
+          }
+        ],
+        "result": "736"
+      }
+    },
+    {
+      "day": 10,
+      "file": "Day10",
+      "part1": {
+        "result": "360154"
+      },
+      "part2": {
+        "result": "5103798"
+      }
+    },
+    {
+      "day": 11,
+      "file": "Day11",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day11Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day11Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 12,
+      "file": "Day12",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day12Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day12Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 13,
+      "file": "Day13",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day13Test",
+            "result": "330"
+          }
+        ],
+        "result": "709"
+      },
+      "part2": {
+        "result": "668"
+      }
+    },
+    {
+      "day": 14,
+      "file": "Day14",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day14Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day14Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 15,
+      "file": "Day15",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day15Test",
+            "result": "62842880"
+          }
+        ],
+        "result": "21367368"
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day15Test",
+            "result": "57600000"
+          }
+        ],
+        "result": "1766400"
+      }
+    },
+    {
+      "day": 16,
+      "file": "Day16",
+      "part1": {
+        "result": "373"
+      },
+      "part2": {
+        "result": "260"
+      }
+    },
+    {
+      "day": 17,
+      "file": "Day17",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day17Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day17Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 18,
+      "file": "Day18",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day18Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day18Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 19,
+      "file": "Day19",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day19Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day19Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 20,
+      "file": "Day20",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day20Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day20Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 21,
+      "file": "Day21",
+      "part1": {
+        "result": "111"
+      },
+      "part2": {
+        "result": "188"
+      }
+    },
+    {
+      "day": 22,
+      "file": "Day22",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day22Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day22Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 23,
+      "file": "Day23",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day23Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day23Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 24,
+      "file": "Day24",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day24Test",
+            "result": "99"
+          }
+        ],
+        "result": "99"
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day24Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    },
+    {
+      "day": 25,
+      "file": "Day25",
+      "part1": {
+        "tests": [
+          {
+            "file": "Day25Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      },
+      "part2": {
+        "tests": [
+          {
+            "file": "Day25Test",
+            "result": ""
+          }
+        ],
+        "result": ""
+      }
+    }
+  ]
+}

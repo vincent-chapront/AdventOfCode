@@ -1,0 +1,27 @@
+[
+  {
+    "year": 20XX,
+    "days": [
+      {
+        "day": 1,
+        "file": "DayXX",
+        "part1": {
+          "tests": [
+            {
+              "file": "DayXXTest",
+              "result": null
+            }
+          ],
+          "result": null
+        },
+        "part2": {
+          "tests": [
+            {
+              "file": "DayXXTest",
+              "result": null
+            }
+          ],
+          "result": null
+        }
+      },
+]
