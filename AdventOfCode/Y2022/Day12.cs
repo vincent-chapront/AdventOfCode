@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
 using System.Linq;
-using static A_star.A_star;
 
 namespace AdventOfCode.Y2022
 {
@@ -14,32 +11,95 @@ namespace AdventOfCode.Y2022
             var grid = input.ParseToGrid(x => x);
             Point2d start = null;
             Point2d end = null;
-            foreach(var c in grid.GetAllCoordinates())
+            foreach (var c in grid.GetAllCoordinates())
             {
-                if (grid[c.Row,c.Col]=='S')
+                if (grid[c.Row, c.Col] == 'S')
                 {
                     start = c;
                 }
-                if (grid[c.Row,c.Col]=='E')
+                if (grid[c.Row, c.Col] == 'E')
                 {
                     end = c;
                 }
             }
 
-            var astar=new AStar(grid, start, end, Heuristics);
+            var astar = new AStar(grid, start, end, Heuristics);
             var res = astar.GetPath();
 
             return (res.Count - 1).ToString();
         }
 
+        public string Compute2(string[] input)
+        {
+            var grid = input.ParseToGrid(x => x);
+            var starts = new List<Point2d>();
+            Point2d end = null;
+            foreach (var c in grid.GetAllCoordinates())
+            {
+                if (grid[c.Row, c.Col] == 'S' || grid[c.Row, c.Col] == 'a')
+                {
+                    starts.Add(c);
+                }
+                if (grid[c.Row, c.Col] == 'E')
+                {
+                    end = c;
+                }
+            }
+
+            var res = int.MaxValue;
+            foreach (var start in starts)
+            {
+                var astar = new AStar(grid, start, end, Heuristics);
+                List<Point2d> path = astar.GetPath();
+                if (path == null)
+                {
+                    continue;
+                }
+
+                res = Math.Min(res, path.Count - 1);
+            }
+            return res.ToString();
+        }
+
+        private static bool IsAccessible(char from, char to)
+        {
+            if (from == 'S')
+            {
+                from = 'a';
+            }
+            else if (from == 'E')
+            {
+                from = 'z';
+            }
+
+            if (to == 'S')
+            {
+                to = 'a';
+            }
+            else if (to == 'E')
+            {
+                to = 'z';
+            }
+
+            return from >= (to - 1);
+        }
+
+        private int Heuristics(char[,] grid, Point2d from, Point2d to)
+        {
+            return
+                IsAccessible(grid[from.Row, from.Col], grid[to.Row, to.Col])
+                ? 1
+                : int.MaxValue;
+        }
+
         private class AStar
         {
-            private readonly char[,] grid;
             private readonly Point2d from;
-            private readonly Point2d to;
+            private readonly char[,] grid;
             private readonly Func<char[,], Point2d, Point2d, int> heuristics;
+            private readonly Point2d to;
 
-            public AStar(char[,] grid,Point2d from,Point2d to, Func<char[,], Point2d, Point2d,int> heuristics)
+            public AStar(char[,] grid, Point2d from, Point2d to, Func<char[,], Point2d, Point2d, int> heuristics)
             {
                 this.grid = grid;
                 this.from = from;
@@ -68,13 +128,13 @@ namespace AdventOfCode.Y2022
 
                 while (openSet.Count > 0)
                 {
-                    var (current,_,idx) = openSet.Select((x, idx) => (x, fScore.SafeGet(x, int.MaxValue), idx)).OrderBy(x => x.Item2).First();
-                    if(current.Row == to.Row && current.Col == to.Col)
+                    var (current, _, idx) = openSet.Select((x, idx) => (x, fScore.SafeGet(x, int.MaxValue), idx)).OrderBy(x => x.Item2).First();
+                    if (current.Row == to.Row && current.Col == to.Col)
                     {
                         return ReconstructPath(cameFrom, current);
                     }
                     openSet.RemoveAt(idx);
-                    foreach(var neighbor in NeighborsCells(grid, current))
+                    foreach (var neighbor in NeighborsCells(grid, current))
                     {
                         var h = heuristics(grid, current, neighbor);
                         if (h == int.MaxValue)
@@ -84,15 +144,15 @@ namespace AdventOfCode.Y2022
 
                         var tentative_gScore = gScore[current] + h;
 
-                        if (tentative_gScore < gScore.SafeGet(neighbor,int.MaxValue))
+                        if (tentative_gScore < gScore.SafeGet(neighbor, int.MaxValue))
                         {
                             cameFrom.SafeSet(neighbor, current);
                             gScore.SafeSet(neighbor, tentative_gScore);
                             fScore.SafeSet(neighbor, tentative_gScore);
                             var isPresent = false;
-                            foreach(var open in openSet)
+                            foreach (var open in openSet)
                             {
-                                if(open.Row==neighbor.Row && open.Col == neighbor.Col)
+                                if (open.Row == neighbor.Row && open.Col == neighbor.Col)
                                 {
                                     isPresent = true;
                                     break;
@@ -109,21 +169,7 @@ namespace AdventOfCode.Y2022
                 return null;
             }
 
-            private static List<Point2d> ReconstructPath(Dictionary<Point2d, Point2d> cameFrom, Point2d current)
-            {
-                var res = new List<Point2d>
-                {
-                    current
-                };
-                while (cameFrom.ContainsKey(current))
-                {
-                    res.Insert(0, cameFrom[current]);
-                    current= cameFrom[current];
-                }
-                return res;
-            }
-
-            private static IEnumerable<Point2d> NeighborsCells<T>(T[,] grid,Point2d c)
+            private static IEnumerable<Point2d> NeighborsCells<T>(T[,] grid, Point2d c)
             {
                 if (c.Row > 0)
                 {
@@ -145,42 +191,20 @@ namespace AdventOfCode.Y2022
                     yield return new Point2d(c.Row, c.Col + 1);
                 }
             }
-        }
 
-        private int Heuristics(char[,] grid, Point2d from, Point2d to)
-        {
-            return
-                IsAccessible(grid[from.Row, from.Col], grid[to.Row, to.Col])
-                ? 1
-                : int.MaxValue;
-        }
-
-        private static bool IsAccessible(char from, char to)
-        {
-            if (from == 'S')
+            private static List<Point2d> ReconstructPath(Dictionary<Point2d, Point2d> cameFrom, Point2d current)
             {
-                from ='a';
+                var res = new List<Point2d>
+                {
+                    current
+                };
+                while (cameFrom.ContainsKey(current))
+                {
+                    res.Insert(0, cameFrom[current]);
+                    current = cameFrom[current];
+                }
+                return res;
             }
-            else if (from == 'E')
-            {
-                from ='z';
-            }
-
-            if (to == 'S')
-            {
-                to ='a';
-            }
-            else if (to == 'E')
-            {
-                to ='z';
-            }
-
-            return from >= (to-1);
-        }
-
-        public string Compute2(string[] input)
-        {
-            throw new NotImplementedException();
         }
     }
 }

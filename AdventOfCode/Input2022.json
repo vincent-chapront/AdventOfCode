@@ -263,10 +263,10 @@
         "tests": [
           {
             "file": "Day12Test",
-            "result": ""
+            "result": "29"
           }
         ],
-        "result": ""
+        "result": "332"
       }
     },
     {
