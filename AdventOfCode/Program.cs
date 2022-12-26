@@ -28,7 +28,7 @@ namespace AdventOfCode
         {
             var years = Newtonsoft.Json.JsonConvert.DeserializeObject<InputFile_Year>(System.IO.File.ReadAllText("Input2022.json"));
             var y = new YearFromJson(years);
-            var d = y.Day(years.Days.First(x=>x.Day==12));
+            var d = y.Day(years.Days.First(x=>x.Day==13));
             d.Run();
             //var days = y.AllDays();
             //days.ForEach(d => d.Run());

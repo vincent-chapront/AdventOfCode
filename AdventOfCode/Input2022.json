@@ -279,16 +279,16 @@
             "result": "13"
           }
         ],
-        "result": ""
+        "result": "6187"
       },
       "part2": {
         "tests": [
           {
             "file": "Day13Test",
-            "result": ""
+            "result": "140"
           }
         ],
-        "result": ""
+        "result": "23520"
       }
     },
     {
