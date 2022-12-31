@@ -320,19 +320,23 @@
         "tests": [
           {
             "file": "Day15Test",
+            "args": "10",
             "result": "26"
           }
         ],
-        "result": ""
+        "result": "5147333",
+        "args": "2000000"
       },
       "part2": {
         "tests": [
           {
             "file": "Day15Test",
-            "result": ""
+            "args": "20",
+            "result": "56000011"
           }
         ],
-        "result": ""
+        "args": "4000000",
+        "result": "13734006908372"
       }
     },
     {
