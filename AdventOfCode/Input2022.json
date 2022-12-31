@@ -301,16 +301,16 @@
             "result": "24"
           }
         ],
-        "result": ""
+        "result": "674"
       },
       "part2": {
         "tests": [
           {
             "file": "Day14Test",
-            "result": ""
+            "result": "93"
           }
         ],
-        "result": ""
+        "result": "24958"
       }
     },
     {

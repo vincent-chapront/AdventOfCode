@@ -47,5 +47,12 @@ namespace AdventOfCode
                 input[key] = value;
             }
         }
+        public static void SafeRemove<T,U>(this Dictionary<T,U> input,T key)
+        {
+            if (input.ContainsKey(key))
+            {
+                input.Remove(key);
+            }
+        }
     }
 }
