@@ -1,30 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2015
 {
     internal class Day14 : GenericDay
     {
-        protected override object Part1()
+        public string Compute1(string[] input, string args)
         {
-            Assert.AreEqual(1120, Compute1(Resources.Year2015.Day14Test.ToLines(), 1000));
-            var res = Compute1(Resources.Year2015.Day14.ToLines(), 2503);
-            Assert.AreEqual(2655, res);
-            return res;
-        }
-
-        protected override object Part2()
-        {
-            Assert.AreEqual(689, Compute2(Resources.Year2015.Day14Test.ToLines(), 1000));
-            var res = Compute2(Resources.Year2015.Day14.ToLines(), 2503);
-            Assert.AreEqual(1059, res);
-            return res;
-        }
-
-        private static long Compute1(string[] input, int timeInSecond)
-        {
+            var timeInSecond = Convert.ToInt32(args);
             var reindeers = input.Select(Parse).ToList();
 
             var maxDistance = int.MinValue;
@@ -35,13 +19,15 @@ namespace AdventOfCode.Y2015
                 maxDistance = Math.Max(maxDistance, distance);
             }
 
-            return maxDistance;
+            return maxDistance.ToString();
         }
 
-        private static long Compute2(string[] input, int timeInSecond)
+        public string Compute2(string[] input, string args)
         {
+            var timeInSecond = Convert.ToInt32(args);
+
             var reindeers = input.Select(Parse).ToList();
-            var trackings = reindeers.ToDictionary(x => x.name, x => new ReindeerTracking());
+            var trackings = reindeers.ToDictionary(x => x.name, _ => new ReindeerTracking());
 
             for (int i = 1; i <= timeInSecond; i++)
             {
@@ -52,7 +38,7 @@ namespace AdventOfCode.Y2015
                 var maxDistance = trackings.Max(x => x.Value.Distance);
                 trackings.Where(x => x.Value.Distance == maxDistance).ToList().ForEach(x => x.Value.Score++);
             }
-            return trackings.Max(x => x.Value.Score);
+            return trackings.Max(x => x.Value.Score).ToString();
         }
 
         private static int DistanceAtTime((string name, int speed, int flyTime, int restTime) reindeer, int timeInSecond)

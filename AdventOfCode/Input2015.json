@@ -422,19 +422,23 @@
         "tests": [
           {
             "file": "Day14Test",
-            "result": ""
+            "args": "1000",
+            "result": "1120"
           }
         ],
-        "result": ""
+        "args": "2503",
+        "result": "2655"
       },
       "part2": {
         "tests": [
           {
             "file": "Day14Test",
-            "result": ""
+            "args": "1000",
+            "result": "689"
           }
         ],
-        "result": ""
+        "args": "2503",
+        "result": "1059"
       }
     },
     {
