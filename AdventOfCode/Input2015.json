@@ -206,19 +206,51 @@
         "tests": [
           {
             "file": "Day07Test",
-            "result": ""
-          }
-        ],
-        "result": ""
-      },
-      "part2": {
-        "tests": [
+            "args": "d",
+            "result": "72"
+          },
           {
             "file": "Day07Test",
-            "result": ""
+            "args": "e",
+            "result": "507"
+          },
+          {
+            "file": "Day07Test",
+            "args": "f",
+            "result": "492"
+          },
+          {
+            "file": "Day07Test",
+            "args": "g",
+            "result": "114"
+          },
+          {
+            "file": "Day07Test",
+            "args": "h",
+            "result": "65412"
+          },
+          {
+            "file": "Day07Test",
+            "args": "i",
+            "result": "65079"
+          },
+          {
+            "file": "Day07Test",
+            "args": "x",
+            "result": "123"
+          },
+          {
+            "file": "Day07Test",
+            "args": "y",
+            "result": "456"
           }
         ],
-        "result": ""
+        "args": "a",
+        "result": "46065"
+      },
+      "part2": {
+        "args": "a",
+        "result": "14134"
       }
     },
     {

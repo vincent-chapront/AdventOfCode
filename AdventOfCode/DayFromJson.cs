@@ -34,9 +34,9 @@ namespace AdventOfCode
 
         private void RunPart(string file, InputFile_Part part, Func<string[], string, string> compute)
         {
-            Console.WriteLine($"{Indent(2)}Test");
             if (part.Tests != null && part.Tests.Count > 0)
             {
+                Console.WriteLine($"{Indent(2)}Test");
                 for (int i = 0; i < part.Tests.Count; i++)
                 {
                     InputFile_Test test = part.Tests[i];
