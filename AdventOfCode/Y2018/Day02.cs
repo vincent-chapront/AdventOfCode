@@ -4,12 +4,12 @@ namespace AdventOfCode.Y2018
 {
     internal class Day02 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             throw new NotImplementedException();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             throw new NotImplementedException();
         }

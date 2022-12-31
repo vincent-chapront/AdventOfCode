@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2020
 {
     internal class Day17 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var dimension = new List<Point3d>();
             for (int row = 0; row < input.Length; row++)
@@ -29,7 +29,7 @@ namespace AdventOfCode.Y2020
             return dimension.Count.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var dimension = new List<Point4d>();
             for (int row = 0; row < input.Length; row++)

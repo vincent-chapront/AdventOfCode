@@ -2,8 +2,8 @@
 {
     public interface GenericDay
     {
-        string Compute1(params string[] input);
+        string Compute1(string[] input, string args);
 
-        string Compute2(params string[] input);
+        string Compute2(string[] input, string args);
     }
 }

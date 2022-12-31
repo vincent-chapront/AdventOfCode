@@ -6,7 +6,7 @@ namespace AdventOfCode.Y2017
 {
     internal class Day13 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var p = input.Select(x => { var a = x.Split(": "); return (depth: int.Parse(a[0]), range: int.Parse(a[1])); }).ToArray();
             var res = 0;
@@ -28,7 +28,7 @@ namespace AdventOfCode.Y2017
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var p = input.Select(x => { var a = x.Split(": "); return (depth: int.Parse(a[0]), range: int.Parse(a[1])); }).ToArray();
             for (int i = 0; i < 100; i++)

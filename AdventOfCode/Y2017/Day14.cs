@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2017
 {
     internal class Day14 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var res = 0;
             for (int i = 0; i <= 127; i++)
@@ -18,7 +18,7 @@ namespace AdventOfCode.Y2017
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             int[,] map = new int[128, 128];
             for (int i = 0; i <= 127; i++)

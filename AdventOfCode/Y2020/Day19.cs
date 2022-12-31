@@ -9,7 +9,7 @@ namespace AdventOfCode.Y2020
 {
     internal class Day19 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var rawRules = input.TakeWhile(x => !string.IsNullOrWhiteSpace(x)).ToArray();
             var rules = ParseRules(rawRules);
@@ -28,7 +28,7 @@ namespace AdventOfCode.Y2020
             return result.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             throw new NotImplementedException();
         }

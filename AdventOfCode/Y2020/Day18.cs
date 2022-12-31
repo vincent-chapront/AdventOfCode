@@ -14,7 +14,7 @@ namespace AdventOfCode.Y2020
         private enum eState
         { Left, Operation, Right }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             Assert.AreEqual(6, Part1("2+4"));
             Assert.AreEqual(8, Part1("2*4"));
@@ -30,7 +30,7 @@ namespace AdventOfCode.Y2020
             return input.Select(x => Part1(x)).Sum().ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             Assert.AreEqual(51, ComputeReversePolishNotation(ReversePolishNotation("1 + (2 * 3) + (4 * (5 + 6))")));
             Assert.AreEqual(46, ComputeReversePolishNotation(ReversePolishNotation("2 * 3 + (4 * 5)")));

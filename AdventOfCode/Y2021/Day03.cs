@@ -51,7 +51,7 @@ namespace AdventOfCode.Y2021
             return Convert.ToInt32(string.Join("", validOxygen[0]), 2);
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var r = Inverse(input);
 
@@ -68,7 +68,7 @@ namespace AdventOfCode.Y2021
             return (Convert.ToInt32(gamma, 2) * Convert.ToInt32(epsilon, 2)).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var oxygen = CalcOxygen(input);
 

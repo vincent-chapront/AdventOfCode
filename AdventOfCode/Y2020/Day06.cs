@@ -6,12 +6,12 @@ namespace AdventOfCode.Y2020
 {
     internal class Day06 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return Parse(input).Select(x => x.Item1.Distinct().Count()).Sum().ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return
                 Parse(input)

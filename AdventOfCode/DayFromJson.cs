@@ -32,7 +32,7 @@ namespace AdventOfCode
             Console.WriteLine();
         }
 
-        private void RunPart(string file, InputFile_Part part, Func<string[], string> compute)
+        private void RunPart(string file, InputFile_Part part, Func<string[], string, string> compute)
         {
             Console.WriteLine($"{Indent(2)}Test");
             if (part.Tests != null && part.Tests.Count > 0)
@@ -53,7 +53,7 @@ namespace AdventOfCode
 
                     try
                     {
-                        var res = compute(testInput);
+                        var res = compute(testInput, test.Args);
                         if (res == test.Result)
                         {
                             WriteSuccess($"{res}");
@@ -72,7 +72,7 @@ namespace AdventOfCode
             Console.Write($"{Indent(2)}Result: ");
             try
             {
-                var result = compute(System.IO.File.ReadAllLines("Inputs/" + year + "/" + file + ".txt"));
+                var result = compute(System.IO.File.ReadAllLines("Inputs/" + year + "/" + file + ".txt"), part.Args);
                 if (string.IsNullOrWhiteSpace(part.Result))
                 {
                     WriteWarning($"{result}");

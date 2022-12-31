@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2020
 {
     internal class Day11 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var grid = new char[input.Length + 2, input[0].Length + 2];
 
@@ -41,7 +41,7 @@ namespace AdventOfCode.Y2020
             return result.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var grid = new char[input.Length + 2, input[0].Length + 2];
 

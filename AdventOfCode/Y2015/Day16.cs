@@ -5,7 +5,7 @@ namespace AdventOfCode.Y2015
 {
     internal class Day16 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var aunts = input.Select(x => new Description(x)).ToList();
 
@@ -25,7 +25,7 @@ namespace AdventOfCode.Y2015
             return aunt.Count == 1 ? aunt.First().Number.ToString() : "ERROR";
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var aunts = input.Select(x => new Description(x)).ToList();
 

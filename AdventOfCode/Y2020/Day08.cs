@@ -6,14 +6,14 @@ namespace AdventOfCode.Y2020
 {
     internal class Day08 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var instructions = input.Select(x => new Instruction(x)).ToArray();
             var res = RunProgram(instructions);
             return res.acc.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var instructions = input.Select(x => new Instruction(x)).ToArray();
             (int acc, bool success) res;

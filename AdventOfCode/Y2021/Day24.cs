@@ -49,14 +49,14 @@ namespace AdventOfCode.Y2021
             ;
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             Clean(input);
             throw new NotImplementedException();
         }
         
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             Clean(input);
             throw new NotImplementedException();

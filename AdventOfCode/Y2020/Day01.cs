@@ -21,12 +21,12 @@ namespace AdventOfCode.Y2020
     //        return res;
     //    }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return Solve(input.Select(x => int.Parse(x)).ToArray(), 2);
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return Solve(input.Select(x => int.Parse(x)).ToArray(), 3);
         }

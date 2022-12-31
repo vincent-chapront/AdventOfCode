@@ -6,12 +6,12 @@ namespace AdventOfCode.Y2016
 {
     internal class Day04 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return input.Select(Parse).Where(x => IsValid(x)).Sum(x => x.id).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return input.Select(Parse).Where(x => IsValid(x)).First(x => Decrypt(x) == "northpole-object-storage").id.ToString();
         }

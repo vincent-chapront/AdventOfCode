@@ -24,12 +24,12 @@ namespace AdventOfCode.Y2022
         //    return res;
         //}
 
-        public string Compute1(string[] input)
+        public string Compute1(string[] input, string args)
         {
             return Run1(input);
         }
 
-        public string Compute2(string[] input)
+        public string Compute2(string[] input, string args)
         {
             return Run2(input);
         }

@@ -52,7 +52,7 @@ namespace AdventOfCode.Y2020
             return data.Select(x => x.bag).ToList();
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var data = BuildBags(input);
 
@@ -72,7 +72,7 @@ namespace AdventOfCode.Y2020
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var data = BuildBags(input);
 

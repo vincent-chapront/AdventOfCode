@@ -22,13 +22,13 @@ namespace AdventOfCode.Y2022
             Rock
         }
 
-        public string Compute1(string[] input)
+        public string Compute1(string[] input, string args)
         {
             var grid2 = Parse(input);
             return DropSand(grid2, DisplayModes.None).ToString();
         }
 
-        public string Compute2(string[] input)
+        public string Compute2(string[] input, string args)
         {
             var grid2 = Parse(input);
             return DropSand2(grid2, DisplayModes.None).ToString();

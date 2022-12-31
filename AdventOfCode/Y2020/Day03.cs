@@ -4,12 +4,12 @@ namespace AdventOfCode.Y2020
 {
     internal class Day03 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return CountCollisions(input, 3, 1).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var c1 = CountCollisions(input, 1, 1);
             var c2 = CountCollisions(input, 3, 1);

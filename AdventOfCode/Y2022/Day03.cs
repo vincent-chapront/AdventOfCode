@@ -22,7 +22,7 @@ namespace AdventOfCode.Y2022
         //    return res;
         //}
 
-        public string Compute1(string[] input)
+        public string Compute1(string[] input, string args)
         {
             var sum = 0;
             foreach(var line in input)
@@ -50,7 +50,7 @@ namespace AdventOfCode.Y2022
             return priority;
         }
 
-        public string Compute2(string[] input)
+        public string Compute2(string[] input, string args)
         {
             var sum = 0;
             for (int i = 0; i < input.Length; i+=3)

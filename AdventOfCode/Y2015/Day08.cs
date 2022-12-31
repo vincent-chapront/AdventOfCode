@@ -5,7 +5,7 @@ namespace AdventOfCode.Y2015
 {
     internal class Day08 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var res = 0;
             foreach (var line in input)
@@ -16,7 +16,7 @@ namespace AdventOfCode.Y2015
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var res = 0;
             foreach (var line in input)

@@ -15,14 +15,14 @@ namespace AdventOfCode.Y2016
             West
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var visited = GetVisited(input[0]);
             return (Math.Abs(visited[visited.Count - 1].Item1) + Math.Abs(visited[visited.Count - 1].Item2)).ToString();
             
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var direction = Directions.North;
             var steps = input[0].Split(", ");

@@ -8,9 +8,9 @@ namespace AdventOfCode.Y2021
 {
     internal class Day16 : GenericDay
     {
-        public string Compute1(params string[] input) => Parse(input[0]).GetVersionSum().ToString();
+        public string Compute1(string[] input, string args) => Parse(input[0]).GetVersionSum().ToString();
 
-        public string Compute2(params string[] input) => Parse(input[0]).GetValue().ToString();
+        public string Compute2(string[] input, string args) => Parse(input[0]).GetValue().ToString();
 
         private static Packet Parse(string input)
         {

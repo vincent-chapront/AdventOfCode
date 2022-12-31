@@ -45,12 +45,12 @@ namespace AdventOfCode.Y2022
             return i + 1;
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return Compute(input[0], 4).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return Compute(input[0], 14).ToString();
         }

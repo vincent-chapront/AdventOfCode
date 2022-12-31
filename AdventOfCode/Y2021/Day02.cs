@@ -22,7 +22,7 @@ namespace AdventOfCode.Y2021
         //    return res;
         //}
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             (int finalX, int finalDepth) =
             input.Select(x => new Step(x)).Aggregate((x: 0, depth: 0), (acc, step) =>
@@ -50,7 +50,7 @@ namespace AdventOfCode.Y2021
             return (finalX * finalDepth).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             (int finalX, int finalDepth, int finalAim) =
             input.Select(x => new Step(x)).Aggregate((x: 0, depth: 0, aim: 0), (acc, step) =>

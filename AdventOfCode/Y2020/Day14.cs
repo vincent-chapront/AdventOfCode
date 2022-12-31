@@ -8,7 +8,7 @@ namespace AdventOfCode.Y2020
 {
     internal class Day14 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             ulong maskAnd = 0;
             ulong maskOr = 0;
@@ -38,7 +38,7 @@ namespace AdventOfCode.Y2020
             return memoryMap.Sum(x => x.Value).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var memoryMap = new Dictionary<ulong, long>();
             var mask = "";

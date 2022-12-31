@@ -7,13 +7,13 @@ namespace AdventOfCode.Y2022
 {
     internal class Day01 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             List<int> calories = GetCalories(input);
             return calories.Max().ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             List<int> calories = GetCalories(input);
             return calories.OrderByDescending(x => x).Take(3).Sum().ToString();

@@ -8,7 +8,7 @@ namespace AdventOfCode.Y2015
 {
     internal class Day15 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var ingredients = input.Select(x => new Ingredient(x)).ToList();
             var n = ingredients.Count;
@@ -44,7 +44,7 @@ namespace AdventOfCode.Y2015
             return max.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var ingredients = input.Select(x => new Ingredient(x)).ToList();
             var n = ingredients.Count;

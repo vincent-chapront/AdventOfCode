@@ -6,7 +6,7 @@ namespace AdventOfCode.Y2021
 {
     internal class Day21 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             (int p1, int p2) = Parse(input);
 
@@ -45,7 +45,7 @@ namespace AdventOfCode.Y2021
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             Dictionary<int, int> dicoStat = new Dictionary<int, int>() {
                 { 3,1},{ 4,3},{ 5,6},{ 6,7},{ 7,6},{ 8,3},{ 9,1}

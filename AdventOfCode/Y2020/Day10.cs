@@ -8,7 +8,7 @@ namespace AdventOfCode.Y2020
     {
         private static Dictionary<int, long> memoization = new Dictionary<int, long>();
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var l = input.Select(x => int.Parse(x)).ToList();
             l.Sort();
@@ -25,7 +25,7 @@ namespace AdventOfCode.Y2020
             return (diff1 * diff3).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var l = input.Select(x => int.Parse(x)).ToList();
             l.Sort();

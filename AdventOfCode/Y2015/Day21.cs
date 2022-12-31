@@ -6,7 +6,7 @@ namespace AdventOfCode.Y2015
 {
     internal class Day21 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var boss = new Character(109, 8, 2);
             var res =
@@ -18,7 +18,7 @@ namespace AdventOfCode.Y2015
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var boss = new Character(109, 8, 2);
             var res =

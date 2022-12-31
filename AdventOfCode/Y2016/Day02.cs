@@ -20,7 +20,7 @@ namespace AdventOfCode.Y2016
         //    return res;
         //}
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var graph = new Dictionary<(char, char), char>
             {
@@ -80,7 +80,7 @@ namespace AdventOfCode.Y2016
             return res;
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var graph = new Dictionary<(char, char), char>
             {

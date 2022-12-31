@@ -82,7 +82,7 @@ namespace AdventOfCode.Y2016
             return newGrid;
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var grid = new List<string>[]
             {
@@ -99,7 +99,7 @@ namespace AdventOfCode.Y2016
             throw new NotImplementedException();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             throw new NotImplementedException();
         }

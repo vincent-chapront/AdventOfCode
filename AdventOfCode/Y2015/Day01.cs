@@ -4,7 +4,7 @@ namespace AdventOfCode.Y2015
 {
     internal class Day01 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             string text = input[0];
             var currentFloor = 0;
@@ -22,7 +22,7 @@ namespace AdventOfCode.Y2015
             return currentFloor.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             string text = input[0];
             var currentFloor = 0;

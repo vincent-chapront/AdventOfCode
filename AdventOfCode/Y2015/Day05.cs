@@ -4,9 +4,9 @@ namespace AdventOfCode.Y2015
 {
     internal class Day05 : GenericDay
     {
-        public string Compute1(params string[] input) => input.Count(IsNice1).ToString();
+        public string Compute1(string[] input, string args) => input.Count(IsNice1).ToString();
 
-        public string Compute2(params string[] input) => input.Count(IsNice2).ToString();
+        public string Compute2(string[] input, string args) => input.Count(IsNice2).ToString();
 
         private static bool IsNice1(string input)
         {

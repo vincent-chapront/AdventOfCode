@@ -6,7 +6,7 @@ namespace AdventOfCode.Y2021
 {
     internal class Day05 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var lines = input.Select(x => new Line(x)).Where(x => x.IsOrthogonal()).ToList();
             var dico = new Dictionary<(int x, int y), int>();
@@ -28,7 +28,7 @@ namespace AdventOfCode.Y2021
             return dico.Count(x => x.Value > 1).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var lines = input.Select(x => new Line(x)).ToList();
             var dico = new Dictionary<(int x, int y), int>();

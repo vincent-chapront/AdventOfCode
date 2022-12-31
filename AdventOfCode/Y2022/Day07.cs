@@ -53,7 +53,7 @@ namespace AdventOfCode.Y2022
             public override int Size { get;  }
         }
 
-        public string Compute1(string[] input)
+        public string Compute1(string[] input, string args)
         {
             (_,List<Directory> directories) = GetDirectories(input);
 
@@ -118,7 +118,7 @@ namespace AdventOfCode.Y2022
             return (root,directories);
         }
 
-        public string Compute2(string[] input)
+        public string Compute2(string[] input, string args)
         {
             (Directory root, List<Directory> directories) = GetDirectories(input);
             var diskSize = 70_000_000;

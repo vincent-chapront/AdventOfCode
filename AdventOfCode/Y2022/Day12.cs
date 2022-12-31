@@ -6,7 +6,7 @@ namespace AdventOfCode.Y2022
 {
     internal class Day12 : GenericDay
     {
-        public string Compute1(string[] input)
+        public string Compute1(string[] input, string args)
         {
             var grid = input.ParseToGrid(x => x);
             Point2d start = null;
@@ -29,7 +29,7 @@ namespace AdventOfCode.Y2022
             return (res.Count - 1).ToString();
         }
 
-        public string Compute2(string[] input)
+        public string Compute2(string[] input, string args)
         {
             var grid = input.ParseToGrid(x => x);
             var starts = new List<Point2d>();

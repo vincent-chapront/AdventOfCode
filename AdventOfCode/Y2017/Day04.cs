@@ -62,12 +62,12 @@ namespace AdventOfCode.Y2017
             return isAnagram;
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return input.Count(IsValid1).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return input.Count(IsValid2).ToString();
         }

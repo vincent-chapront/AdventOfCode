@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2017
 {
     internal class Day07 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             Dictionary<string, Program> dico = Build(input);
             var root = dico.First(x => x.Value.Parent == null).Value;
@@ -59,7 +59,7 @@ namespace AdventOfCode.Y2017
             return weight;
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             Dictionary<string, Program> dico = Build(input);
 

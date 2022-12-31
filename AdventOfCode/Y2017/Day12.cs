@@ -37,7 +37,7 @@ namespace AdventOfCode.Y2017
             return dico;
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             Dictionary<string, Program> dico = Build(input);
             var prgm = dico["0"];
@@ -65,7 +65,7 @@ namespace AdventOfCode.Y2017
             return neighboors;
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             Dictionary<string, Program> dico = Build(input);
             var groups = 0;

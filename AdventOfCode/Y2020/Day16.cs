@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2020
 {
     internal class Day16 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             (List<Rule> rules, int[] myTicket, List<int[]> otherTickets) = ParseInput(input);
 
@@ -26,7 +26,7 @@ namespace AdventOfCode.Y2020
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             (List<Rule> rules, int[] myTicket, List<int[]> otherTickets) = ParseInput(input);
 

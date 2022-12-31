@@ -6,7 +6,7 @@ namespace AdventOfCode.Y2021
 {
     internal class Day11 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var map = new int[input.Length, input[0].Length];
             foreach (var point in GetAllCoordinate(map.GetLength(0), map.GetLength(1)))
@@ -24,7 +24,7 @@ namespace AdventOfCode.Y2021
             return numberOfFlash.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var map = new int[input.Length, input[0].Length];
             foreach (var point in GetAllCoordinate(map.GetLength(0), map.GetLength(1)))

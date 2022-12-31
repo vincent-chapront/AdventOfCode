@@ -10,14 +10,14 @@ namespace AdventOfCode.Y2021
         private enum eSegment
         { a, b, c, d, e, f, g }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var searchDigits = new int[] { 2, 4, 3, 7 };
             var res = input.Select(x => new Config(x)).Sum(x => x.Output.Count(y => searchDigits.Contains(y.Segments.Count)));
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var dico = new Dictionary<eSegment, eSegment>();
             var configs = input.Select(x => new Config(x)).ToList();

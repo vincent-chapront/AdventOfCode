@@ -54,7 +54,7 @@ namespace AdventOfCode.Y2016
             return registry["a"];
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var registry = new Dictionary<string, int>
             {
@@ -66,7 +66,7 @@ namespace AdventOfCode.Y2016
             return Compute(input, registry).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var registry = new Dictionary<string, int>
             {

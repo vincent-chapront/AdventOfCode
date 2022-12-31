@@ -16,7 +16,7 @@ namespace AdventOfCode.Y2021
             ;
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var (rangeX, rangeY) = Parse(input[0]);
             var y = Math.Abs(rangeY.Min + 1);
@@ -24,7 +24,7 @@ namespace AdventOfCode.Y2021
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var (rangeX, rangeY) = Parse(input[0]);
             var yMax = Math.Abs(rangeY.Min);

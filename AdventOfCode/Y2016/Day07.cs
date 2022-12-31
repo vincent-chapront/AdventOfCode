@@ -44,7 +44,7 @@ namespace AdventOfCode.Y2016
             return haveOutside;
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var res = input.Where(x => IsSupportTls(x)).Count();
             return res.ToString();
@@ -95,7 +95,7 @@ namespace AdventOfCode.Y2016
             return false;
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var res = input.Where(x => IsSupportSsl(x)).Count();
             return res.ToString();

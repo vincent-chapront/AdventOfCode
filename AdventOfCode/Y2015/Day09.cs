@@ -40,12 +40,12 @@ namespace AdventOfCode.Y2015
             return result;
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return Compute(input).Min(x => x.distance).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return Compute(input).Max(x => x.distance).ToString();
         }

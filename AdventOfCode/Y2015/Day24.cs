@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2015
 {
     internal class Day24 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var l = input.Select(x => int.Parse(x)).ToList();
             var target = l.Sum() / 3;
@@ -174,7 +174,7 @@ namespace AdventOfCode.Y2015
             }
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             throw new NotImplementedException();
         }

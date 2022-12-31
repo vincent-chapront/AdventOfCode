@@ -2,7 +2,7 @@
 {
     internal class Day02 : GenericDay
     {
-        public string Compute1(string[] input)
+        public string Compute1(string[] input, string args)
         {
             var totalScore = 0;
             foreach (var line in input)
@@ -59,7 +59,7 @@
             return totalScore.ToString();
         }
 
-        public string Compute2(string[] input)
+        public string Compute2(string[] input, string args)
         {
             var totalScore = 0;
             foreach (var line in input)

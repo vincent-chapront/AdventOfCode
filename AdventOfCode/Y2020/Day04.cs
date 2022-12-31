@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2020
 {
     internal class Day04 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             Func<Passport, bool> isValid = p =>
             {
@@ -23,7 +23,7 @@ namespace AdventOfCode.Y2020
             return Parse(input, isValid).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var validEyeColors = new string[] { "amb", "blu", "brn", "gry", "grn", "hzl", "oth" };
             var regexHairColor = new Regex(@"#[0-9a-f]{6}");

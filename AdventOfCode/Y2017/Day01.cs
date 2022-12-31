@@ -30,7 +30,7 @@ namespace AdventOfCode.Y2017
         //    return res;
         //}
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var text = input.First();
             long res = 0;
@@ -47,7 +47,7 @@ namespace AdventOfCode.Y2017
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var text = input.First();
             long res = 0;

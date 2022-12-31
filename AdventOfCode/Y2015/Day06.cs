@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2015
 {
     internal class Day06 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             Regex r = new Regex(@"(turn on|toggle|turn off) ([\d,]*) through ([\d,]*)");
             var map = new bool[1000, 1000];
@@ -46,7 +46,7 @@ namespace AdventOfCode.Y2015
             return res.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             Regex r = new Regex(@"(turn on|toggle|turn off) ([\d,]*) through ([\d,]*)");
             var map = new long[1000, 1000];

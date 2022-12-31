@@ -23,12 +23,12 @@ namespace AdventOfCode.Y2015
         //    return res;
         //}
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return input.Select(x => ComputePaper(x)).Sum().ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return input.Select(x => ComputeRibbon(x)).Sum().ToString();
         }

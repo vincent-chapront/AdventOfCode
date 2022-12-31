@@ -17,7 +17,7 @@ namespace AdventOfCode.Y2015
             None
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             throw new NotImplementedException();
         }
@@ -301,7 +301,7 @@ namespace AdventOfCode.Y2015
             return endState;
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             throw new NotImplementedException();
         }

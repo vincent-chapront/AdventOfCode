@@ -32,12 +32,12 @@ namespace AdventOfCode.Y2020
             return input.Select(parse).Select(x => computeId(x.row, x.col));
         }
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return Compute(input).Max().ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var filledIds = Compute(input).ToList();
             filledIds.Sort();

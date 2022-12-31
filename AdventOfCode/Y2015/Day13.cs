@@ -8,14 +8,14 @@ namespace AdventOfCode.Y2015
 {
     internal class Day13 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var v = input.Select(Parse).ToList();
 
             return GetMaxHappiness(ref v).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var v = input.Select(Parse).ToList();
             var guests = v.Select(x => x.from).Distinct().ToList();

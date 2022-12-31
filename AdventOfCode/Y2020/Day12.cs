@@ -5,7 +5,7 @@ namespace AdventOfCode.Y2020
 {
     internal class Day12 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             int x;
             int y;
@@ -74,7 +74,7 @@ namespace AdventOfCode.Y2020
             return (Math.Abs(x) + Math.Abs(y)).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             int xShip = 0;
             int yShip = 0;

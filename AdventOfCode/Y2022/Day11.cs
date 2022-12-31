@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2022
 {
     internal class Day11 : GenericDay
     {
-        public string Compute1(string[] input)
+        public string Compute1(string[] input, string args)
         {
             var monkeys = Parse(input);
             for (int i = 0; i < 20; i++)
@@ -21,7 +21,7 @@ namespace AdventOfCode.Y2022
             return a.ToString();
         }
 
-        public string Compute2(string[] input)
+        public string Compute2(string[] input, string args)
         {
             var monkeys = Parse(input);
             var turn = 0;

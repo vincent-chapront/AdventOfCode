@@ -22,7 +22,7 @@ namespace AdventOfCode.Y2020
         //    return res;
         //}
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             bool IsValid(Rule r)
             {
@@ -34,7 +34,7 @@ namespace AdventOfCode.Y2020
             return rules.Count(x => IsValid(x)).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             bool IsValid(Rule r)
             {

@@ -6,12 +6,12 @@ namespace AdventOfCode.Y2022
 {
     internal class Day09 : GenericDay
     {
-        public string Compute1(string[] input)
+        public string Compute1(string[] input, string args)
         {
             return Compute(input, 2);
         }
 
-        public string Compute2(string[] input)
+        public string Compute2(string[] input, string args)
         {
             return Compute(input, 10);
         }

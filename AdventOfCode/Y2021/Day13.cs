@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2021
 {
     internal class Day13 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             (List<Point2d> points, List<(string, int)> folds) = Parse(input);
             points = Fold(points, folds.Take(1).ToList());
@@ -15,7 +15,7 @@ namespace AdventOfCode.Y2021
             return points.Count.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             (List<Point2d> points, List<(string, int)> folds) = Parse(input);
             points = Fold(points, folds.ToList());

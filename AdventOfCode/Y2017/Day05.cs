@@ -6,7 +6,7 @@ namespace AdventOfCode.Y2017
 {
     internal class Day05 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var program = input.Select(int.Parse).ToArray();
             var step = 0;
@@ -21,7 +21,7 @@ namespace AdventOfCode.Y2017
             return step.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             throw new NotImplementedException();
         }

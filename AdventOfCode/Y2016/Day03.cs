@@ -5,12 +5,12 @@ namespace AdventOfCode.Y2016
 {
     internal class Day03 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return input.Select(x => Parse(x)).Count(IsValid).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var res = 0;
             for (int i = 0; i < input.Length; i += 3)

@@ -5,7 +5,7 @@ namespace AdventOfCode.Y2017
 {
     internal class Day11 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var ns = 0;
             var ew = 0;
@@ -31,7 +31,7 @@ namespace AdventOfCode.Y2017
             return (Math.Abs(ns) + Math.Abs(ew)).ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             throw new NotImplementedException();
         }

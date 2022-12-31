@@ -4,7 +4,7 @@ namespace AdventOfCode.Y2015
 {
     internal class Day03 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var text = input[0];
             var visitedHouses = new List<string>();
@@ -25,7 +25,7 @@ namespace AdventOfCode.Y2015
             return visitedHouses.Count.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             var text = input[0];
             var visitedHouses = new List<string>();

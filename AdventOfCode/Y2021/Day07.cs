@@ -7,7 +7,7 @@ namespace AdventOfCode.Y2021
     internal class Day07 : GenericDay
     {
 
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             var v = input[0].Split(",").Select(x => int.Parse(x)).ToList();
             v.Sort();
@@ -23,7 +23,7 @@ namespace AdventOfCode.Y2021
             return result.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             static int ComputeCost2Unit(int a, int b)
             {

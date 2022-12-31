@@ -8,11 +8,11 @@ namespace AdventOfCode.Y2017
 {
     internal class Day08 : GenericDay
     {
-        public string Compute1(params string[] input)
+        public string Compute1(string[] input, string args)
         {
             return Compute(input).endMax.ToString();
         }
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return Compute(input).totalMax.ToString();
         }

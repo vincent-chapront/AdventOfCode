@@ -18,11 +18,13 @@ namespace AdventOfCode
     {
         public List<InputFile_Test> Tests { get; set; }
         public string Result { get; set; }
+        public string Args { get; set; }
     }
 
     public class InputFile_Test
     {
         public string File { get; set; }
+        public string Args { get; set; }
         public string Text { get; set; }
         public string Result { get; set; }
     }
