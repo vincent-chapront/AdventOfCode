@@ -1,41 +1,23 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace AdventOfCode.Y2015
 {
     internal class Day19 : GenericDay
     {
-        protected override object Part1()
+        public string Compute1(string[] input, string args)
         {
-            Assert.AreEqual(4, Compute1(Resources.Year2015.Day19Test.ToLines(), "HOH"));
-            Assert.AreEqual(3, Compute1(Resources.Year2015.Day19Test.ToLines(), "H2O"));
-            Assert.AreEqual(7, Compute1(Resources.Year2015.Day19Test.ToLines(), "HOHOHO"));
-            var res = Compute1(Resources.Year2015.Day19.ToLines());
-            Assert.AreEqual(200, res);
-            return res;
+            var res = Process1(input.Take(input.Length - 2).ToArray(), input[^1]);
+            return res.ToString();
         }
 
-        protected override object Part2()
+        public string Compute2(string[] input, string args)
         {
-            Assert.AreEqual(3, Compute2(Resources.Year2015.Day19Test.ToLines(), "HOH"));
-            Assert.AreEqual(6, Compute2(Resources.Year2015.Day19Test.ToLines(), "HOHOHO"));
-            var res = Compute2(Resources.Year2015.Day19.ToLines());
-            Assert.AreEqual(-1, res);
-            return res;
+            var res = Process2(input.Take(input.Length - 2).ToArray(), input[^1]);
+            return res.ToString();
         }
 
-        public string Compute1(params string[] input)
-        {
-            if (!string.IsNullOrWhiteSpace(input[^2]))
-            {
-                throw new InvalidOperationException("Invalid input: empy line expected at Length-2");
-            }
-            return Compute1(input.Take(input.Length - 2).ToArray(), input[^1]).ToString();
-        }
-
-        private static long Compute1(string[] input, string start)
+        private static long Process1(string[] input, string start)
         {
             var knownTransformations = input.Select(x => { var a = x.Split(" => "); return (from: a[0], to: a[1]); }).ToArray();
 
@@ -47,8 +29,8 @@ namespace AdventOfCode.Y2015
 
                 while ((idx = start.IndexOf(from, idx + 1)) > -1)
                 {
-                    var prefix = start.Substring(0, idx);
-                    var suffix = start.Substring(idx + from.Length);
+                    var prefix = start[..idx];
+                    var suffix = start[(idx + from.Length)..];
 
                     string resultingMolecule = prefix + to + suffix;
                     if (!resultingMolecules.Contains(resultingMolecule))
@@ -61,22 +43,11 @@ namespace AdventOfCode.Y2015
             return resultingMolecules.Count;
         }
 
-        public string Compute2(params string[] input)
-        {
-            if (!string.IsNullOrWhiteSpace(input[^2]))
-            {
-                throw new InvalidOperationException("Invalid input: empy line expected at Length-2");
-            }
-            return Compute2(input.Take(input.Length - 2).ToArray(), input[^1]).ToString();
-        }
-
-        private static long Compute2(string[] input, string target)
+        private static long Process2(string[] input, string target)
         {
             var knownTransformations = input.Select(x => { var a = x.Split(" => "); return (from: a[0], to: a[1]); }).OrderByDescending(x => x.to.Length).ThenBy(x => x.from.Length).ToArray();
 
-            var foo = new List<(string target, int step)>();
-
-            foo.Add((target, 0));
+            var foo = new List<(string target, int step)> { (target, 0) };
 
             while (foo.Count > 0 && foo[0].target != "e")
             {
@@ -89,25 +60,22 @@ namespace AdventOfCode.Y2015
 
                     while ((idx = bar.target.IndexOf(to, idx + 1)) > -1)
                     {
-                        var prefix = bar.target.Substring(0, idx);
-                        var suffix = bar.target.Substring(idx + to.Length);
+                        var prefix = bar.target[..idx];
+                        var suffix = bar.target[(idx + to.Length)..];
 
                         string resultingMolecule = prefix + from + suffix;
 
-                        if (foo.Any(x => x.target == resultingMolecule))
+                        if (!foo.Any(x => x.target == resultingMolecule))
                         {
-                        }
-                        else
-                        {
-                            foo.Add((resultingMolecule, bar.Item2 + 1));
+                            foo.Add((resultingMolecule, bar.step + 1));
                         }
                     }
                 }
 
-                foo = foo.OrderBy(x => x.target.Length).ThenBy(x => x.Item2).ToList();
+                foo = foo.OrderBy(x => x.target.Length).ThenBy(x => x.step).ToList();
             }
 
-            return foo.Count > 0 ? foo[0].Item2 : -1;
+            return foo.Count > 0 ? foo[0].step : -1;
         }
     }
 }

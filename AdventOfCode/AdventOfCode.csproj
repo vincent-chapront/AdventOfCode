@@ -23,7 +23,6 @@
     <Compile Remove="Properties\Year2017File.Designer.cs" />
     <Compile Remove="Properties\Year2020.Designer.cs" />
     <Compile Remove="Properties\Year2021.Designer.cs" />
-    <Compile Remove="Y2015\Day19.cs" />
     <Compile Remove="Y2015\Day20.cs" />
     <Compile Remove="Y2015\Day23.cs" />
     <Compile Remove="Y2015\Day25.cs" />
@@ -195,7 +194,13 @@
     <None Update="Inputs\2015\Day19.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\2015\Day19Test.txt">
+    <None Update="Inputs\2015\Day19Test3.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Inputs\2015\Day19Test2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Inputs\2015\Day19Test1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Inputs\2015\Day20.txt">

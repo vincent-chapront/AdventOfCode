@@ -531,20 +531,32 @@
       "part1": {
         "tests": [
           {
-            "file": "Day19Test",
-            "result": ""
+            "file": "Day19Test1",
+            "result": "4"
+          },
+          {
+            "file": "Day19Test2",
+            "result": "3"
+          },
+          {
+            "file": "Day19Test3",
+            "result": "7"
           }
         ],
-        "result": ""
+        "result": "518"
       },
       "part2": {
         "tests": [
           {
-            "file": "Day19Test",
-            "result": ""
+            "file": "Day19Test1",
+            "result": "3"
+          },
+          {
+            "file": "Day19Test3",
+            "result": "6"
           }
         ],
-        "result": ""
+        "result": "200"
       }
     },
     {
