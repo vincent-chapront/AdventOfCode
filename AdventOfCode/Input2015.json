@@ -307,20 +307,14 @@
       "part1": {
         "tests": [
           {
-            "file": "Day11Test",
-            "result": ""
+            "text": "abcdefgh",
+            "result": "abcdffaa"
           }
         ],
-        "result": ""
+        "result": "vzbxxyzz"
       },
       "part2": {
-        "tests": [
-          {
-            "file": "Day11Test",
-            "result": ""
-          }
-        ],
-        "result": ""
+        "result": "vzcaabcc"
       }
     },
     {

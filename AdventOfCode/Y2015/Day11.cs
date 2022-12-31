@@ -1,29 +1,19 @@
 ﻿using System.Text;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2015
 {
     internal class Day11 : GenericDay
     {
-        protected override object Part1()
+        public string Compute1(string[] input, string args)
         {
-            Assert.AreEqual(false, IsValid("hijklmmn"));
-            Assert.AreEqual(false, IsValid("abbceffg"));
-            Assert.AreEqual(false, IsValid("abbcegjk"));
-            Assert.AreEqual("abd", Next("abc"));
-            Assert.AreEqual("aca", Next("abz"));
-            Assert.AreEqual("baa", Next("azz"));
-            Assert.AreEqual("abcdffaa", NextValid("abcdefgh"));
-            var res = NextValid(Resources.Year2015.Day11);
-            Assert.AreEqual("vzbxxyzz", res);
+            var res = NextValid(input[0]);
             return res;
         }
 
-        protected override object Part2()
+        public string Compute2(string[] input, string args)
         {
-            var res = NextValid(Resources.Year2015.Day11);
+            var res = NextValid(input[0]);
             res = NextValid(res);
-            Assert.AreEqual("vzcaabcc", res);
             return res;
         }
 
@@ -65,7 +55,7 @@ namespace AdventOfCode.Y2015
 
         private static string Next(string s)
         {
-            if (s[s.Length - 1] == 'z')
+            if (s[^1] == 'z')
             {
                 var retenu = 1;
                 var sb = new StringBuilder();
@@ -89,21 +79,21 @@ namespace AdventOfCode.Y2015
             }
             else
             {
-                return s.Substring(0, s.Length - 1) + (char)(s[s.Length - 1] + 1);
+                return s[..^1] + (char)(s[^1] + 1);
             }
         }
 
         private static string NextValid(string s)
         {
             int i = 0;
-            var a = s.Substring(0, 5);
+            var a = s[..5];
             do
             {
                 i++;
                 var b = Next(s);
-                if (b.Substring(0, 5) != a)
+                if (b[..5] != a)
                 {
-                    a = s.Substring(0, 5);
+                    a = s[..5];
                 }
                 s = b;
             } while (!IsValid(s));
