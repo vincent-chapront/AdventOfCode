@@ -506,19 +506,23 @@
         "tests": [
           {
             "file": "Day18Test",
-            "result": ""
+            "args": "4",
+            "result": "4"
           }
         ],
-        "result": ""
+        "args": "100",
+        "result": "1061"
       },
       "part2": {
         "tests": [
           {
             "file": "Day18Test",
-            "result": ""
+            "args": "5",
+            "result": "17"
           }
         ],
-        "result": ""
+        "args": "100",
+        "result": "1006"
       }
     },
     {

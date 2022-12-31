@@ -1,29 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2015
 {
     internal class Day18 : GenericDay
     {
-        protected override object Part1()
+        public string Compute1(string[] input, string args)
         {
-            Assert.AreEqual(4, Compute1(Resources.Year2015.Day18Test.ToLines(), 4));
-            var res = Compute1(Resources.Year2015.Day18.ToLines(), 100);
-            Assert.AreEqual(1061, res);
-            return res;
-        }
-
-        protected override object Part2()
-        {
-            Assert.AreEqual(17, Compute2(Resources.Year2015.Day18Test.ToLines(), 5));
-            var res = Compute2(Resources.Year2015.Day18.ToLines(), 100);
-            Assert.AreEqual(1006, res);
-            return res;
-        }
-
-        private static long Compute1(string[] input, int steps)
-        {
+            var steps = Convert.ToInt32(args);
             var grid = GetGrid(input);
             var size = grid.GetLength(0);
             for (int i = 0; i < steps; i++)
@@ -31,11 +16,12 @@ namespace AdventOfCode.Y2015
                 grid = NextStep(grid, size);
             }
 
-            return CountOn(grid, size);
+            return CountOn(grid, size).ToString();
         }
 
-        private static long Compute2(string[] input, int steps)
+        public string Compute2(string[] input, string args)
         {
+            var steps = Convert.ToInt32(args);
             var grid = GetGrid(input);
             var size = grid.GetLength(0);
             grid[0, 0] = true;
@@ -51,7 +37,7 @@ namespace AdventOfCode.Y2015
                 grid[size - 1, size - 1] = true;
             }
 
-            return CountOn(grid, size);
+            return CountOn(grid, size).ToString();
         }
 
         private static long CountOn(bool[,] grid, int size)
