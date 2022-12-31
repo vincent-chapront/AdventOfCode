@@ -617,22 +617,10 @@
       "day": 23,
       "file": "Day23",
       "part1": {
-        "tests": [
-          {
-            "file": "Day23Test",
-            "result": ""
-          }
-        ],
-        "result": ""
+        "result": "170"
       },
       "part2": {
-        "tests": [
-          {
-            "file": "Day23Test",
-            "result": ""
-          }
-        ],
-        "result": ""
+        "result": "247"
       }
     },
     {

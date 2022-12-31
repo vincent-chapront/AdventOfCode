@@ -1,104 +1,83 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace AdventOfCode.Y2015
+﻿namespace AdventOfCode.Y2015
 {
     internal class Day23 : GenericDay
     {
-        protected override object Part1()
+        public string Compute1(string[] input, string args)
         {
-            var test=@"inc a
-jio a, +2
-tpl a
-inc a".ToLines();
-            Assert.AreEqual(2,Compute1(test).a);
-            var res = Compute1(Resources.Year2015.Day23.ToLines());
-            Assert.AreEqual(170, res.b);
-            return res.b;
+            var (_, b) = Compute1(input);
+            return b.ToString();
         }
 
-        protected override object Part2()
+        public string Compute2(string[] input, string args)
         {
-            var res = Compute1(Resources.Year2015.Day23.ToLines(),1);
-            Assert.AreEqual(247, res.b);
-            return res.b;
+            var (_, b) = Compute1(input, 1);
+            return b.ToString();
         }
 
-        private static (long a, long b) Compute1(string[] input, long startA=0, long startB=0)
+        private static (long a, long b) Compute1(string[] input, long startA = 0, long startB = 0)
         {
-            var a=startA;
-            var b=startB;
-            var currentLine=0;
-            while(currentLine<input.Length)
+            var a = startA;
+            var b = startB;
+            var currentLine = 0;
+            while (currentLine < input.Length)
             {
-                var line=input[currentLine];
-                if(line.StartsWith("hlf"))
+                var line = input[currentLine];
+                if (line.StartsWith("hlf"))
                 {
-                    if(line.EndsWith("a")){
-                        a/=2;
+                    if (line.EndsWith("a"))
+                    {
+                        a /= 2;
                     }
-                    else{
-                        b/=2;
+                    else
+                    {
+                        b /= 2;
                     }
                     currentLine++;
                 }
-                else if(line.StartsWith("tpl"))
+                else if (line.StartsWith("tpl"))
                 {
-                    if(line.EndsWith("a")){
-                        a*=3;
+                    if (line.EndsWith("a"))
+                    {
+                        a *= 3;
                     }
-                    else{
-                        b*=3;
+                    else
+                    {
+                        b *= 3;
                     }
                     currentLine++;
                 }
-                else if(line.StartsWith("inc"))
+                else if (line.StartsWith("inc"))
                 {
-                    if(line.EndsWith("a")){
+                    if (line.EndsWith("a"))
+                    {
                         a++;
                     }
-                    else{
+                    else
+                    {
                         b++;
                     }
                     currentLine++;
                 }
-                else if(line.StartsWith("jmp"))
+                else if (line.StartsWith("jmp"))
                 {
-                    var value=int.Parse(line.Split(" ")[1].Replace("+",""));
-                    currentLine+=value;
+                    var value = int.Parse(line.Split(" ")[1].Replace("+", ""));
+                    currentLine += value;
                 }
-                else if(line.StartsWith("jio"))
+                else if (line.StartsWith("jio"))
                 {
-                    var val=0L;
-                    if(line.Contains("a,")){
-                        val=a;
-                    }
-                    else{
-                        val=b;
-                    }
-                    var value=int.Parse(line.Split(" ")[2].Replace("+",""));
-                    currentLine+=val==1?value:1;
+                    var val = (line.Contains("a,")) ? a : b;
+                    var value = int.Parse(line.Split(" ")[2].Replace("+", ""));
+                    currentLine += val == 1 ? value : 1;
                 }
-                else if(line.StartsWith("jie"))
+                else if (line.StartsWith("jie"))
                 {
-                    var val=0L;
-                    if(line.Contains("a,")){
-                        val=a;
-                    }
-                    else{
-                        val=b;
-                    }
-                    var value=int.Parse(line.Split(" ")[2].Replace("+",""));
-                    currentLine+=val%2==0?value:1;
+                    var val = (line.Contains("a,")) ? a : b;
+                    var value = int.Parse(line.Split(" ")[2].Replace("+", ""));
+                    currentLine += val % 2 == 0 ? value : 1;
                 }
             }
 
-            return (a,b);
-        }
-
-        public string Compute2(params string[] input)
-        {
-            return "ERROR";
+            return (a, b);
         }
     }
 }
