@@ -2,56 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2015
 {
     internal class Day12 : GenericDay
     {
-        protected override object Part1()
+        public string Compute1(string[] input, string args)
         {
-            Assert.AreEqual(6, Compute1("[1,2,3]"));
-            Assert.AreEqual(6, Compute1("{\"a\":2,\"b\":4}"));
-            Assert.AreEqual(3, Compute1("[[[3]]]"));
-            Assert.AreEqual(3, Compute1("{\"a\":{\"b\":4},\"c\":-1}"));
-            Assert.AreEqual(0, Compute1("{\"a\":[-1,1]}"));
-            Assert.AreEqual(0, Compute1("[-1,{\"a\":1}]"));
-            Assert.AreEqual(0, Compute1("[]"));
-            Assert.AreEqual(0, Compute1("{}"));
-            var res = Compute1(Resources.Year2015.Day12);
-            Assert.AreEqual(111754, res);
-            return res;
-        }
-
-        protected override object Part2()
-        {
-            Assert.AreEqual(456, Compute2("456"));
-            Assert.AreEqual(-654, Compute2("-654"));
-            Assert.AreEqual(0, Compute2("\"aze\""));
-            Assert.AreEqual(4, Compute2("[1,\"foo\",3]"));
-            Assert.AreEqual(10, Compute2("[1,\"foo\",[6,\"qsd\"],3]"));
-            Assert.AreEqual(33, Compute2("[1,\"foo\",[6,[13,\"aze\"],\"qsd\"],3,[10,\"pp\"]]"));
-            Assert.AreEqual(10, Compute2("{\"e\":[1,2,3,4]}"));
-            Assert.AreEqual(15, Compute2("{\"e\":[1,2,3,4],\"f\":5}"));
-            Assert.AreEqual(0, Compute2("{\"d\":\"red\",\"e\":[1,2,3,4],\"f\":5}"));
-            var res = Compute2(Resources.Year2015.Day12);
-            Assert.AreEqual(-1, res);
-            return res;
-        }
-
-        public string Compute1(params string[] input)
-        {
-            Regex r = new Regex(@"([\-\d])+");
+            var r = new Regex(@"([\-\d])+");
             var g = r.Matches(input[0]).Select(x => x.Value).Select(x => long.Parse(x)).Sum();
             return g.ToString();
         }
 
-        public string Compute2(params string[] input)
+        public string Compute2(string[] input, string args)
         {
             return Compute2Parser.Start(input[0]).ToString();
         }
 
-        private class Compute2Parser
+        private static class Compute2Parser
         {
             public static int Start(string input)
             {
@@ -64,7 +32,7 @@ namespace AdventOfCode.Y2015
             private static ValueArray ReadArray(IEnumerator<char> enumerator)
             {
                 var a = enumerator.Current;
-                List<ValueAbstract> list = new List<ValueAbstract>();
+                var list = new List<ValueAbstract>();
                 while (a != ']')
                 {
                     enumerator.MoveNext();
@@ -87,7 +55,7 @@ namespace AdventOfCode.Y2015
                 }
                 while (char.IsDigit(enumerator.Current))
                 {
-                    res = res * 10 + (enumerator.Current - '0');
+                    res = (res * 10) + (enumerator.Current - '0');
                     if (!enumerator.MoveNext())
                     {
                         break;
@@ -99,7 +67,7 @@ namespace AdventOfCode.Y2015
             private static ValueObject ReadObject(IEnumerator<char> enumerator)
             {
                 var a = enumerator.Current;
-                List<ValuePair> list = new List<ValuePair>();
+                var list = new List<ValuePair>();
                 while (a != '}')
                 {
                     enumerator.MoveNext();
@@ -115,7 +83,6 @@ namespace AdventOfCode.Y2015
             {
                 var key = ReadString(enumerator);
 
-                var a = enumerator.Current;
                 enumerator.MoveNext();
 
                 var r = ReadValue(enumerator);
@@ -145,32 +112,24 @@ namespace AdventOfCode.Y2015
             private static ValueAbstract ReadValue(IEnumerator<char> enumerator)
             {
                 var c = enumerator.Current;
-                switch (c)
+                return c switch
                 {
-                    case '-':
-                    case '0':
-                    case '1':
-                    case '2':
-                    case '3':
-                    case '4':
-                    case '5':
-                    case '6':
-                    case '7':
-                    case '8':
-                    case '9': return ReadInt(enumerator);
-                    case '"': return ReadString(enumerator);
-                    case '[': return ReadArray(enumerator);
-                    case '{': return ReadObject(enumerator);
-                    default: throw new NotImplementedException();
-                }
+                    '-' or '0' or '1' or '2' or '3' or '4' or '5' or '6' or '7' or '8' or '9' => ReadInt(enumerator),
+                    '"' => ReadString(enumerator),
+                    '[' => ReadArray(enumerator),
+                    '{' => ReadObject(enumerator),
+                    _ => throw new NotImplementedException(),
+                };
             }
 
             private abstract class ValueAbstract
-            { public abstract int Count { get; } }
+            {
+                public abstract int Count { get; }
+            }
 
             private class ValueArray : ValueAbstract
             {
-                private ValueAbstract[] content;
+                private readonly ValueAbstract[] content;
 
                 public ValueArray(ValueAbstract[] content)
                 {
@@ -194,7 +153,7 @@ namespace AdventOfCode.Y2015
 
             private class ValueObject : ValueAbstract
             {
-                private ValuePair[] pairs;
+                private readonly ValuePair[] pairs;
 
                 public ValueObject(ValuePair[] pairs)
                 {
@@ -216,29 +175,25 @@ namespace AdventOfCode.Y2015
 
             private class ValuePair : ValueAbstract
             {
-                private string key;
-                private ValueAbstract value;
-
                 public ValuePair(string key, ValueAbstract value)
                 {
-                    this.key = key;
-                    this.value = value;
+                    Key = key;
+                    Value = value;
                 }
 
-                public override int Count { get => value.Count; }
-                public ValueAbstract Value => value;
+                public override int Count { get => Value.Count; }
+                public string Key { get; }
+                public ValueAbstract Value { get; }
             }
 
             private class ValueString : ValueAbstract
             {
-                private string content;
-
                 public ValueString(string content)
                 {
-                    this.content = content;
+                    Content = content;
                 }
 
-                public string Content => content;
+                public string Content { get; }
                 public override int Count { get => 0; }
             }
         }
