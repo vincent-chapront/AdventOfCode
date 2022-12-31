@@ -23,7 +23,6 @@
     <Compile Remove="Properties\Year2017File.Designer.cs" />
     <Compile Remove="Properties\Year2020.Designer.cs" />
     <Compile Remove="Properties\Year2021.Designer.cs" />
-    <Compile Remove="Y2015\Day17.cs" />
     <Compile Remove="Y2015\Day18.cs" />
     <Compile Remove="Y2015\Day19.cs" />
     <Compile Remove="Y2015\Day20.cs" />

@@ -480,19 +480,23 @@
         "tests": [
           {
             "file": "Day17Test",
-            "result": ""
+            "args": "25",
+            "result": "4"
           }
         ],
-        "result": ""
+        "args": "150",
+        "result": "1304"
       },
       "part2": {
         "tests": [
           {
             "file": "Day17Test",
-            "result": ""
+            "args": "25",
+            "result": "3"
           }
         ],
-        "result": ""
+        "args": "150",
+        "result": "18"
       }
     },
     {
