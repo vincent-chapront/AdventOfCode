@@ -1,30 +1,25 @@
 ﻿using System;
 using System.Linq;
+using AdventOfCode.Properties;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2020
 {
     internal class Day09 : GenericDay
     {
-        protected override object Part1()
+        public string Compute1(string[] input, string args)
         {
-            Assert.AreEqual(127, Compute1(Resources.Year2020.Day09Test.ToLines(), 5));
-            var res = Compute1(Resources.Year2020.Day09.ToLines(), 25);
-            Assert.AreEqual(530627549, res);
-            return res;
+            var preambleSize = Convert.ToInt32(args);
+            return Process1(input, preambleSize).ToString();
+        }
+        public string Compute2(string[] input, string args)
+        {
+            var preambleSize = Convert.ToInt32(args);
+            return Process2(input, preambleSize).ToString();
         }
 
-        protected override object Part2()
+        private static long Process1(string[] input, int preambleSize)
         {
-            Assert.AreEqual(62, Compute2(Resources.Year2020.Day09Test.ToLines(), 5));
-            var res = Compute2(Resources.Year2020.Day09.ToLines(), 25);
-            Assert.AreEqual(77730285, res);
-            return res;
-        }
-
-        private static long Compute1(string[] input, int preambleSize)
-        {
-            //var preambleSize = isTest?5:25;
             var l = input.Select(x => long.Parse(x)).ToList();
 
             for (int i = preambleSize + 1; i < l.Count; i++)
@@ -46,9 +41,9 @@ namespace AdventOfCode.Y2020
             return int.MaxValue;
         }
 
-        private static long Compute2(string[] input, int preambleSize)
+        private static long Process2(string[] input, int preambleSize)
         {
-            var search = Compute1(input, preambleSize);
+            var search = Process1(input, preambleSize);
             var l = input.Select(x => long.Parse(x)).ToList();
 
             var startIndex = 0;

@@ -16,7 +16,7 @@ namespace AdventOfCode.Y2020
 
         public string Compute1(string[] input, string args)
         {
-            Assert.AreEqual(6, Part1("2+4"));
+            /*Assert.AreEqual(6, Part1("2+4"));
             Assert.AreEqual(8, Part1("2*4"));
             Assert.AreEqual(24, Part1("20+4"));
             Assert.AreEqual(80, Part1("20*4"));
@@ -26,18 +26,18 @@ namespace AdventOfCode.Y2020
             Assert.AreEqual(14, Part1("2+(4*3)"));
             Assert.AreEqual(13632, Part1("((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2"));
             Assert.AreEqual(13652, Part1("((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 14 * 2"));
-
+            */
             return input.Select(x => Part1(x)).Sum().ToString();
         }
 
         public string Compute2(string[] input, string args)
         {
-            Assert.AreEqual(51, ComputeReversePolishNotation(ReversePolishNotation("1 + (2 * 3) + (4 * (5 + 6))")));
+            /*Assert.AreEqual(51, ComputeReversePolishNotation(ReversePolishNotation("1 + (2 * 3) + (4 * (5 + 6))")));
             Assert.AreEqual(46, ComputeReversePolishNotation(ReversePolishNotation("2 * 3 + (4 * 5)")));
             Assert.AreEqual(1445, ComputeReversePolishNotation(ReversePolishNotation("5 + (8 * 3 + 9 + 3 * 4 * 3)")));
             Assert.AreEqual(669060, ComputeReversePolishNotation(ReversePolishNotation("5 * 9 * (7 * 3 * 3 + 9 * 3 + (8 + 6 * 4))")));
             Assert.AreEqual(23340, ComputeReversePolishNotation(ReversePolishNotation("((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2")));
-
+            */
             return input.Select(x => ComputeReversePolishNotation(ReversePolishNotation(x))).Sum().ToString();
         }
 

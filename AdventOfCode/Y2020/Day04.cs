@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Text.RegularExpressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2020
 {
@@ -26,7 +25,7 @@ namespace AdventOfCode.Y2020
         public string Compute2(string[] input, string args)
         {
             var validEyeColors = new string[] { "amb", "blu", "brn", "gry", "grn", "hzl", "oth" };
-            var regexHairColor = new Regex(@"#[0-9a-f]{6}");
+            var regexHairColor = new Regex("#[0-9a-f]{6}");
             Func<string, bool> isHeightValid = s =>
             {
                 if (s.EndsWith("cm"))
@@ -120,8 +119,7 @@ namespace AdventOfCode.Y2020
 
             private static int? ParseInt(string s)
             {
-                int r;
-                if (int.TryParse(s, out r))
+                if (int.TryParse(s, out int r))
                 {
                     return r;
                 }

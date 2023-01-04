@@ -1,27 +1,10 @@
 ﻿using System.Linq;
 using System.Text.RegularExpressions;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2020
 {
     internal class Day02 : GenericDay
     {
-        //protected override object Part1()
-        //{
-        //    Assert.AreEqual(2, Compute1(Resources.Year2020.Day02Test.ToLines()));
-        //    var res = Compute1(Resources.Year2020.Day02.ToLines());
-        //    Assert.AreEqual(493, res);
-        //    return res;
-        //}
-
-        //protected override object Part2()
-        //{
-        //    Assert.AreEqual(1, Compute2(Resources.Year2020.Day02Test.ToLines()));
-        //    var res = Compute2(Resources.Year2020.Day02.ToLines());
-        //    Assert.AreEqual(593, res);
-        //    return res;
-        //}
-
         public string Compute1(string[] input, string args)
         {
             bool IsValid(Rule r)

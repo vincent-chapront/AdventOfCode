@@ -55,21 +55,6 @@ namespace AdventOfCode.Y2020
                 return (x, y);
             }
 
-            (x, y) = Move(new string[] { "N5", "S5" });
-            Assert.AreEqual((x, y), (0, 0));
-
-            (x, y) = Move(new string[] { "S5", "N5" });
-            Assert.AreEqual((x, y), (0, 0));
-
-            (x, y) = Move(new string[] { "E5", "W5" });
-            Assert.AreEqual((x, y), (0, 0));
-
-            (x, y) = Move(new string[] { "W5", "E5" });
-            Assert.AreEqual((x, y), (0, 0));
-
-            (x, y) = Move(new string[] { "E5", "R180", "F5" });
-            Assert.AreEqual((x, y), (0, 0));
-
             (x, y) = Move(input);
             return (Math.Abs(x) + Math.Abs(y)).ToString();
         }

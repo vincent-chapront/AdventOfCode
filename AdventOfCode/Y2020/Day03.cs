@@ -19,11 +19,11 @@ namespace AdventOfCode.Y2020
             return (c1 * c2 * c3 * c4 * c5).ToString();
         }
 
-        private static int CountCollisions(string[] input, int sX, int sY)
+        private static long CountCollisions(string[] input, int sX, int sY)
         {
             int x = 0;
             int y = 0;
-            var result = 0;
+            long result = 0;
             int width = input[0].Length;
             while (y < input.Length)
             {

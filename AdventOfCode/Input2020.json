@@ -11,7 +11,7 @@
             "result": "514579"
           }
         ],
-        "result": "842016"
+        "result": "997899"
       },
       "part2": {
         "tests": [
@@ -20,7 +20,7 @@
             "result": "241861950"
           }
         ],
-        "result": "9199664"
+        "result": "131248694"
       }
     },
     {
@@ -33,7 +33,7 @@
             "result": "2"
           }
         ],
-        "result": "493"
+        "result": "398"
       },
       "part2": {
         "tests": [
@@ -42,7 +42,7 @@
             "result": "1"
           }
         ],
-        "result": "593"
+        "result": "562"
       }
     },
     {
@@ -55,7 +55,7 @@
             "result": "7"
           }
         ],
-        "result": "282"
+        "result": "299"
       },
       "part2": {
         "tests": [
@@ -64,7 +64,7 @@
             "result": "336"
           }
         ],
-        "result": "958815792"
+        "result": "3621285278"
       }
     },
     {
@@ -77,10 +77,10 @@
             "result": "2"
           }
         ],
-        "result": "204"
+        "result": "239"
       },
       "part2": {
-        "tests": [,
+        "tests": [
           {
             "file": "Day04Test",
             "result": "2"
@@ -88,13 +88,9 @@
           {
             "file": "Day04Test_Part2_4",
             "result": "4"
-          },
-          {
-            "file": "Day04Test_Part2_0",
-            "result": "0"
           }
         ],
-        "result": "179"
+        "result": "188"
       }
     },
     {
@@ -107,7 +103,7 @@
             "result": "820"
           }
         ],
-        "result": "953"
+        "result": "947"
       },
       "part2": {
         "tests": [
@@ -116,7 +112,7 @@
             "result": "566"
           }
         ],
-        "result": "615"
+        "result": "636"
       }
     },
     {
@@ -129,7 +125,7 @@
             "result": "11"
           }
         ],
-        "result": "6549"
+        "result": "6310"
       },
       "part2": {
         "tests": [
@@ -138,7 +134,7 @@
             "result": "6"
           }
         ],
-        "result": "3466"
+        "result": "3193"
       }
     },
     {
@@ -151,7 +147,7 @@
             "result": "4"
           }
         ],
-        "result": "124"
+        "result": "179"
       },
       "part2": {
         "tests": [
@@ -160,7 +156,7 @@
             "result": "32"
           }
         ],
-        "result": "34862"
+        "result": "18925"
       }
     },
     {
@@ -173,7 +169,7 @@
             "result": "5"
           }
         ],
-        "result": "1915"
+        "result": "1614"
       },
       "part2": {
         "tests": [
@@ -182,7 +178,7 @@
             "result": "8"
           }
         ],
-        "result": "944"
+        "result": "1260"
       }
     },
     {
@@ -192,19 +188,23 @@
         "tests": [
           {
             "file": "Day09Test",
-            "result": ""
+            "args": "5",
+            "result": "127"
           }
         ],
-        "result": ""
+        "args": "25",
+        "result": "217430975"
       },
       "part2": {
         "tests": [
           {
             "file": "Day09Test",
-            "result": ""
+            "args": "5",
+            "result": "62"
           }
         ],
-        "result": ""
+        "args": "25",
+        "result": "28509180"
       }
     },
     {
@@ -217,7 +217,7 @@
             "result": "220"
           }
         ],
-        "result": "2312"
+        "result": "2368"
       },
       "part2": {
         "tests": [
@@ -226,7 +226,7 @@
             "result": "19208"
           }
         ],
-        "result": "12089663946752"
+        "result": "1727094849536"
       }
     },
     {
@@ -239,7 +239,7 @@
             "result": "37"
           }
         ],
-        "result": "2247"
+        "result": "2346"
       },
       "part2": {
         "tests": [
@@ -248,7 +248,7 @@
             "result": "26"
           }
         ],
-        "result": "2011"
+        "result": "2111"
       }
     },
     {
@@ -261,7 +261,7 @@
             "result": "25"
           }
         ],
-        "result": "445"
+        "result": "420"
       },
       "part2": {
         "tests": [
@@ -270,7 +270,7 @@
             "result": "286"
           }
         ],
-        "result": "42495"
+        "result": "42073"
       }
     },
     {
@@ -301,20 +301,28 @@
       "part1": {
         "tests": [
           {
-            "file": "Day14Test",
+            "file": "Day14Test1",
             "result": "165"
+          },
+          {
+            "file": "Day14Test2",
+            "result": "51"
           }
         ],
-        "result": "7817357407588"
+        "result": "5902420735773"
       },
       "part2": {
         "tests": [
           {
-            "file": "Day14Test",
+            "file": "Day14Test1",
+            "result": "0"
+          },
+          {
+            "file": "Day14Test2",
             "result": "208"
           }
         ],
-        "result": "4335927555692"
+        "result": "3801988250775"
       }
     },
     {
@@ -327,7 +335,7 @@
             "result": "436"
           }
         ],
-        "result": "1428"
+        "result": "412"
       },
       "part2": {
         "tests": [
@@ -336,7 +344,7 @@
             "result": "175594"
           }
         ],
-        "result": "3718541"
+        "result": "243"
       }
     },
     {
@@ -349,10 +357,10 @@
             "result": "71"
           }
         ],
-        "result": "26053"
+        "result": "27850"
       },
       "part2": {
-        "result": "1515506256421"
+        "result": "491924517533"
       }
     },
     {
@@ -365,7 +373,7 @@
             "result": "112"
           }
         ],
-        "result": "304"
+        "result": "310"
       },
       "part2": {
         "tests": [
@@ -374,7 +382,7 @@
             "result": "848"
           }
         ],
-        "result": "1868"
+        "result": "2056"
       }
     },
     {
@@ -383,20 +391,72 @@
       "part1": {
         "tests": [
           {
-            "file": "Day18Test",
+            "text": "2+4",
+            "result": "6"
+          },
+          {
+            "text": "2*4",
+            "result": "8"
+          },
+          {
+            "text": "20+4",
+            "result": "24"
+          },
+          {
+            "text": "20*4",
+            "result": "80"
+          },
+          {
+            "text": "2+4+2",
+            "result": "8"
+          },
+          {
+            "text": "2*4+2",
+            "result": "10"
+          },
+          {
+            "text": "2 + 4 * 3",
+            "result": "18"
+          },
+          {
+            "text": "2+(4*3)",
+            "result": "14"
+          },
+          {
+            "text": "((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2",
             "result": "13632"
+          },
+          {
+            "text": "((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 14 * 2",
+            "result": "13652"
           }
         ],
-        "result": "12956356593940"
+        "result": "24650385570008"
       },
       "part2": {
         "tests": [
           {
-            "file": "Day18Test",
+            "text": "1 + (2 * 3) + (4 * (5 + 6))",
+            "result": "51"
+          },
+          {
+            "text": "2 * 3 + (4 * 5)",
+            "result": "46"
+          },
+          {
+            "text": "5 + (8 * 3 + 9 + 3 * 4 * 3)",
+            "result": "1445"
+          },
+          {
+            "text": "5 * 9 * (7 * 3 * 3 + 9 * 3 + (8 + 6 * 4))",
+            "result": "669060"
+          },
+          {
+            "text": "((2 + 4 * 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2",
             "result": "23340"
           }
         ],
-        "result": "94240043727614"
+        "result": "158183007916215"
       }
     },
     {

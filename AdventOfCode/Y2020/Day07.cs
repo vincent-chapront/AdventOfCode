@@ -1,11 +1,41 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2020
 {
     internal class Day07 : GenericDay
     {
+        public string Compute1(string[] input, string args)
+        {
+            var data = BuildBags(input);
+
+            var res = 0;
+            foreach (var bag in data)
+            {
+                if (bag.Color == "shiny gold")
+                {
+                    continue;
+                }
+                if (Contains(bag, "shiny gold"))
+                {
+                    res++;
+                }
+            }
+
+            return res.ToString();
+        }
+
+        public string Compute2(string[] input, string args)
+        {
+            var data = BuildBags(input);
+
+            var shinyGold = data.FirstOrDefault(x => x.Color == "shiny gold");
+
+            var res = CountInner(shinyGold) - 1;
+
+            return res.ToString();
+        }
+
         private static List<Bag> BuildBags(string[] input)
         {
             var data =
@@ -50,37 +80,6 @@ namespace AdventOfCode.Y2020
             }
 
             return data.Select(x => x.bag).ToList();
-        }
-
-        public string Compute1(string[] input, string args)
-        {
-            var data = BuildBags(input);
-
-            var res = 0;
-            foreach (var bag in data)
-            {
-                if (bag.Color == "shiny gold")
-                {
-                    continue;
-                }
-                if (Contains(bag, "shiny gold"))
-                {
-                    res++;
-                }
-            }
-
-            return res.ToString();
-        }
-
-        public string Compute2(string[] input, string args)
-        {
-            var data = BuildBags(input);
-
-            var shinyGold = data.FirstOrDefault(x => x.Color == "shiny gold");
-
-            var res = CountInner(shinyGold) - 1;
-
-            return res.ToString();
         }
 
         private static bool Contains(Bag bag, string color)
