@@ -1,27 +1,10 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2021
 {
     internal class Day02 : GenericDay
     {
-        //protected override object Part1()
-        //{
-        //    Assert.AreEqual(150, Compute1(Resources.Year2021.Day02Test.ToLines()));
-        //    var res = this.Compute1(Resources.Year2021.Day02.ToLines());
-        //    Assert.AreEqual(1648020, res);
-        //    return res;
-        //}
-
-        //protected override object Part2()
-        //{
-        //    Assert.AreEqual(900, Compute2(Resources.Year2021.Day02Test.ToLines()));
-        //    var res = this.Compute2(Resources.Year2021.Day02.ToLines());
-        //    Assert.AreEqual(1759818555, res);
-        //    return res;
-        //}
-
         public string Compute1(string[] input, string args)
         {
             (int finalX, int finalDepth) =

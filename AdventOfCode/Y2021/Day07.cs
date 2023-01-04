@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2021
 {
     internal class Day07 : GenericDay
     {
-
         public string Compute1(string[] input, string args)
         {
             var v = input[0].Split(",").Select(x => int.Parse(x)).ToList();

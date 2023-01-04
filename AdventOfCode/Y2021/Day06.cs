@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2021
 {
@@ -10,6 +9,7 @@ namespace AdventOfCode.Y2021
         {
             return Compute(input, 80).ToString();
         }
+
         public string Compute2(string[] input, string args)
         {
             return Compute(input, 256).ToString();

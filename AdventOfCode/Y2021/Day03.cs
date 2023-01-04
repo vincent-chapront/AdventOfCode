@@ -1,11 +1,36 @@
 ﻿using System;
 using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace AdventOfCode.Y2021
 {
     internal class Day03 : GenericDay
     {
+        public string Compute1(string[] input, string args)
+        {
+            var r = Inverse(input);
+
+            string gamma = "";
+            string epsilon = "";
+            for (int i = 0; i < r.GetLength(0); i++)
+            {
+                var number1 = r[i].Count(x => x == '1');
+                var number0 = r[i].Count(x => x == '0');
+                gamma += number1 > number0 ? "1" : "0";
+                epsilon += number1 > number0 ? "0" : "1";
+            }
+
+            return (Convert.ToInt32(gamma, 2) * Convert.ToInt32(epsilon, 2)).ToString();
+        }
+
+        public string Compute2(string[] input, string args)
+        {
+            var oxygen = CalcOxygen(input);
+
+            int co2 = CalcCo2(input);
+
+            return (oxygen * co2).ToString();
+        }
+
         private static int CalcCo2(string[] input)
         {
             var validCO2 = input;
@@ -49,32 +74,6 @@ namespace AdventOfCode.Y2021
                 i++;
             }
             return Convert.ToInt32(string.Join("", validOxygen[0]), 2);
-        }
-
-        public string Compute1(string[] input, string args)
-        {
-            var r = Inverse(input);
-
-            string gamma = "";
-            string epsilon = "";
-            for (int i = 0; i < r.GetLength(0); i++)
-            {
-                var number1 = r[i].Count(x => x == '1');
-                var number0 = r[i].Count(x => x == '0');
-                gamma += number1 > number0 ? "1" : "0";
-                epsilon += number1 > number0 ? "0" : "1";
-            }
-
-            return (Convert.ToInt32(gamma, 2) * Convert.ToInt32(epsilon, 2)).ToString();
-        }
-
-        public string Compute2(string[] input, string args)
-        {
-            var oxygen = CalcOxygen(input);
-
-            int co2 = CalcCo2(input);
-
-            return (oxygen * co2).ToString();
         }
 
         private static char[][] Inverse(string[] input)
