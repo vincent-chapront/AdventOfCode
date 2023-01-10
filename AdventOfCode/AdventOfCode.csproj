@@ -32,8 +32,6 @@
     <Compile Remove="Y2020\Day13.cs" />
     <Compile Remove="Y2020\Day20.cs" />
     <Compile Remove="Y2020\Day22.cs" />
-    <Compile Remove="Y2021\Day14.cs" />
-    <Compile Remove="Y2021\Day15.cs" />
     <Compile Remove="Y2021\Day18.cs" />
     <Compile Remove="Y2021\Day22.cs" />
     <Compile Remove="Y2022\Days.cs" />
@@ -621,10 +619,7 @@
     <None Update="Inputs\2021\Day14.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Inputs\2021\Day14Test1.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Inputs\2021\Day14Test2.txt">
+    <None Update="Inputs\2021\Day14Test.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Inputs\2021\Day15.txt">

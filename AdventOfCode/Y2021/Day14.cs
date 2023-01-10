@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -7,29 +8,8 @@ namespace AdventOfCode.Y2021
 {
     internal class Day14 : GenericDay
     {
-        protected override object Part1()
-        {
-            Assert.AreEqual(1, Compute(Resources.Year2021.Day14Test.ToLines(), 0));
-            Assert.AreEqual(1, Compute(Resources.Year2021.Day14Test.ToLines(), 1));
-            Assert.AreEqual(5, Compute(Resources.Year2021.Day14Test.ToLines(), 2));
-            Assert.AreEqual(7, Compute(Resources.Year2021.Day14Test.ToLines(), 3));
-            Assert.AreEqual(1588, Compute(Resources.Year2021.Day14Test.ToLines(), 10));
-
-            var res = Compute(Resources.Year2021.Day14.ToLines(), 10);
-            Assert.AreEqual(2621, res);
-
-            return res;
-        }
-
-        protected override object Part2()
-        {
-            Assert.AreEqual(2188189693529, Compute(Resources.Year2021.Day14Test.ToLines(), 40));
-
-            long res = Compute(Resources.Year2021.Day14.ToLines(), 40);
-            Assert.AreEqual(2843834241366, res);
-
-            return res;
-        }
+        public string Compute1(string[] input, string args) => Compute(input,Convert.ToInt32(args)).ToString();
+        public string Compute2(string[] input, string args) => Compute(input,Convert.ToInt32(args)).ToString();
 
         private static long Compute(string[] input, int iterationNumber)
         {

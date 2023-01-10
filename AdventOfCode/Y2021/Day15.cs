@@ -5,26 +5,28 @@ namespace AdventOfCode.Y2021
 {
     internal class Day15 : GenericDay
     {
+        public string Compute1(string[] input, string args) => Compute2(input,1).ToString();
+        public string Compute2(string[] input, string args) => Compute2(input,5).ToString();
         //https://rosettacode.org/wiki/A*_search_algorithm#C.23
-        protected override object Part1()
-        {
-            Assert.AreEqual(40, Compute2(Resources.Year2021.Day15Test.ToLines(), 1));
+        //protected override object Part1()
+        //{
+        //    Assert.AreEqual(40, Compute2(Resources.Year2021.Day15Test.ToLines(), 1));
 
-            var res = Compute2(Resources.Year2021.Day15.ToLines(), 1);
-            Assert.AreEqual(435, res);
-            return res;
-        }
+        //    var res = Compute2(Resources.Year2021.Day15.ToLines(), 1);
+        //    Assert.AreEqual(435, res);
+        //    return res;
+        //}
 
-        protected override object Part2()
-        {
-            //Assert.AreEqual(315, Compute2(Resources.Year2021.Day15Test.ToLines(),5));
-            //return 0;
-            //throw new NotImplementedException();
-            var res = Compute2(Resources.Year2021.Day15.ToLines(), 5);
-            Assert.AreEqual(2842, res);
+        //protected override object Part2()
+        //{
+        //    //Assert.AreEqual(315, Compute2(Resources.Year2021.Day15Test.ToLines(),5));
+        //    //return 0;
+        //    //throw new NotImplementedException();
+        //    var res = Compute2(Resources.Year2021.Day15.ToLines(), 5);
+        //    Assert.AreEqual(2842, res);
 
-            return res;
-        }
+        //    return res;
+        //}
 
         private static long Compute(Cell[,] cells, bool debugMode)
         {

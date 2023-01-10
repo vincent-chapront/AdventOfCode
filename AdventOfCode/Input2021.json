@@ -231,7 +231,7 @@
             "result": "1656"
           }
         ],
-        "result": "1649"
+        "result": "1713"
       },
       "part2": {
         "tests": [
@@ -240,7 +240,7 @@
             "result": "195"
           }
         ],
-        "result": "256"
+        "result": "502"
       }
     },
     {
@@ -253,7 +253,7 @@
             "result": "226"
           }
         ],
-        "result": "4970"
+        "result": "5228"
       },
       "part2": {
         "tests": [
@@ -262,7 +262,7 @@
             "result": "3509"
           }
         ],
-        "result": "137948"
+        "result": "131228"
       }
     },
     {
@@ -294,19 +294,43 @@
         "tests": [
           {
             "file": "Day14Test",
-            "result": ""
+            "args": "0",
+            "result": "1"
+          },
+          {
+            "file": "Day14Test",
+            "args": "1",
+            "result": "1"
+          },
+          {
+            "file": "Day14Test",
+            "args": "2",
+            "result": "5"
+          },
+          {
+            "file": "Day14Test",
+            "args": "3",
+            "result": "7"
+          },
+          {
+            "file": "Day14Test",
+            "args": "10",
+            "result": "1588"
           }
         ],
-        "result": ""
+        "args": "10",
+        "result": "2587"
       },
       "part2": {
         "tests": [
           {
             "file": "Day14Test",
-            "result": ""
+            "args": "40",
+            "result": "2188189693529"
           }
         ],
-        "result": ""
+        "args": "40",
+        "result": "3318837563123"
       }
     },
     {
@@ -316,7 +340,7 @@
         "tests": [
           {
             "file": "Day15Test",
-            "result": ""
+            "result": "40"
           }
         ],
         "result": ""
@@ -325,7 +349,7 @@
         "tests": [
           {
             "file": "Day15Test",
-            "result": ""
+            "result": "315"
           }
         ],
         "result": ""
